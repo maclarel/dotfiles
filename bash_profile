@@ -1,3 +1,6 @@
+# Options
+set -o vi										# vim mode for bash
+
 # Aliases
 
 alias flushdns='sudo killall -HUP mDNSResponder'					# Flush DNS Cache
