@@ -23,6 +23,7 @@ alias c='clear'                                                                 
 alias v='vim'                                                                           # Saving keystrokes for vim
 alias sv='sudo vim'                                                                     # Run vim w/ sudo
 alias reload='source ~/.bash_profile'                                                   # Reload bash_profile
+alias ytd="youtube-dl -f bestvideo+bestaudio "                                          # youtube-dl best video/audio
 
 # Colour
 
