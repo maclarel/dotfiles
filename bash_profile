@@ -18,7 +18,7 @@ alias reload='source ~/.bash_profile'							# Reload bash_profile
 alias ga='git add'									# Save keystrokes for git
 alias gac='git add -A && git commit -m'
 alias pull='git pull'
-aliash push='git push'
+alias push='git push'
 
 # Colour
 

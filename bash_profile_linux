@@ -27,7 +27,7 @@ alias ytd="youtube-dl -f bestvideo+bestaudio "                                  
 alias ga='git add'									# Save keystrokes for git
 alias gac='git add -A && git commit -m'
 alias pull='git pull'
-aliash push='git push'
+alias push='git push'
 
 # Colour
 
