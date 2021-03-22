@@ -17,7 +17,7 @@ shopt -s autocd                                                                 
 
 # Aliases
 
-alias ll='ls -latrh --color'                                                            # `ll` ala Linux
+alias ll='ls -lAtrh --color'                                                            # `ll` ala Linux
 alias myip='curl http://ipecho.net/plain; echo'                                         # Get Public IP
 alias c='clear'                                                                         # Clear terminal
 alias v='vim'                                                                           # Saving keystrokes for vim

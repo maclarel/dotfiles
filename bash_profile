@@ -8,7 +8,7 @@ set -o vi										# vim mode for bash
 
 alias flushdns='sudo killall -HUP mDNSResponder'					# Flush DNS Cache
 alias sublime='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'		# Open something in Sublime Text
-alias ll='ls -latr'									# `ll` ala Linux
+alias ll='ls -lAtr'									# `ll` ala Linux
 alias f='open -a Finder ./'								# Open Finder at current directory
 alias myip='curl http://ipecho.net/plain; echo'						# Get Public IP
 alias c='clear'										# Clear terminal
