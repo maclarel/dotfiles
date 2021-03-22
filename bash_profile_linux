@@ -24,10 +24,13 @@ alias v='vim'                                                                   
 alias sv='sudo vim'                                                                     # Run vim w/ sudo
 alias reload='source ~/.bash_profile'                                                   # Reload bash_profile
 alias ytd="youtube-dl -f bestvideo+bestaudio "                                          # youtube-dl best video/audio
-alias ga='git add'									# Save keystrokes for git
+alias ga='git add'                                                                      # Save keystrokes for git
 alias gac='git add -A && git commit -m'
 alias pull='git pull'
 alias push='git push'
+alias gs='git status'
+alias gc='git checkout'
+alias gd='git diff'
 
 # Colour
 

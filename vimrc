@@ -3,3 +3,5 @@ colorscheme slate
 set number
 set relativenumber
 map <F6> :setlocal spell! spelllang=en_us<CR>
+set visualbell
+set t_vb=
