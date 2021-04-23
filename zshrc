@@ -8,7 +8,7 @@ export ZSH="/Users/maclarel/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 # Add plugins 
-plugins=( git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting)
 
 # Oh my ZSH goodies
 source $ZSH/oh-my-zsh.sh
