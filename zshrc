@@ -29,6 +29,9 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
+# Reverse search
+bindkey '^R' history-incremental-search-backward
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 
