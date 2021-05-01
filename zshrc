@@ -2,7 +2,10 @@
 export PATH="/$PATH:$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/maclarel/.oh-my-zsh"
+export ZSH="/home/gillette/.oh-my-zsh"
+
+# Disable the damn bell
+unsetopt BEEP
 
 # Set theme
 ZSH_THEME="robbyrussell"
