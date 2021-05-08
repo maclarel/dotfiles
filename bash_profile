@@ -1,21 +1,30 @@
-# Ignore zsh note
-export BASH_SILENCE_DEPRECATION_WARNING=1
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+shopt -s autocd
+export PATH
 
 # Options
-set -o vi										# vim mode for bash
+set -o vi                                                                               # vim mode for bash
+shopt -s autocd                                                                         # cd into a directory by typing its name
 
 # Aliases
 
-alias flushdns='sudo killall -HUP mDNSResponder'					# Flush DNS Cache
-alias sublime='/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'		# Open something in Sublime Text
-alias ll='ls -lAtr'									# `ll` ala Linux
-alias f='open -a Finder ./'								# Open Finder at current directory
-alias myip='curl http://ipecho.net/plain; echo'						# Get Public IP
-alias c='clear'										# Clear terminal
-alias v='vim'										# Saving keystrokes for vim
-alias sv='sudo vim'									# See above
-alias reload='source ~/.bash_profile'							# Reload bash_profile
-alias ga='git add'									# Save keystrokes for git
+alias ll='ls -lAtrh --color'                                                            # `ll` ala Linux
+alias myip='curl http://ipecho.net/plain; echo'                                         # Get Public IP
+alias c='clear'                                                                         # Clear terminal
+alias v='vim'                                                                           # Saving keystrokes for vim
+alias sv='sudo vim'                                                                     # Run vim w/ sudo
+alias reload='source ~/.bash_profile'                                                   # Reload bash_profile
+alias ytd="youtube-dl -f bestvideo+bestaudio "                                          # youtube-dl best video/audio
+alias ga='git add'                                                                      # Save keystrokes for git
 alias gac='git add -A && git commit -m'
 alias pull='git pull'
 alias push='git push'
@@ -25,14 +34,13 @@ alias gd='git diff'
 
 # Colour
 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "	# Pretty colours!
-export CLICOLOR=1									
-export LSCOLORS=ExFxBxDxCxegedabagacad
-export PATH="/usr/local/opt/ruby/bin:$PATH"						# Fix Catalina Ruby
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "      # Pretty colours!
+export CLICOLOR=1
+export LSCOLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
 # File Management
 
-   extract () {										# Extract basically all known formats
+   extract () {                                                                         # Extract basically all known formats
         if [ -f $1 ] ; then
           case $1 in
             *.tar.bz2)   tar xjf $1     ;;
@@ -51,6 +59,4 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"						# Fix Catalina Ruby
          else
              echo "'$1' is not a valid file"
          fi
-    }	
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+    }
