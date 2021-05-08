@@ -11,3 +11,4 @@ Dotfiles and plists for various apps I use/have used and want to maintain a sour
 - `limelightrc`: Gives me window highlighting with [limelight](https://github.com/koekeishiya/limelight)
 - `alacritty.yml`: Config for [Alacritty](https://github.com/alacritty/alacritty), current terminal emulator
 - `com.amethyst.Amethyst.plist`: Prefs file (yuck!) for my current tiling window manager, [Ameythyst](https://github.com/ianyh/Amethyst/)
+  - Needs to be placed in `~/Library/Preferences/`
