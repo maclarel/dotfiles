@@ -1,2 +1,3 @@
+# Place this file in .config/alacritty/
 window:
   decorations: "none" 
