@@ -1,0 +1,16 @@
+# Place this file in .config/alacritty/
+window:
+  padding:
+    x: 5 
+    y: 5
+
+background_opacity: 0.95
+
+key_bindings:
+    - { key: Equals, mods: Control, action: IncreaseFontSize }
+    - { key: Minus, mods: Control, action: DecreaseFontSize }
+    - { key: Key0, mods: Control, action: ResetFontSize }
+    - { key: N, mods: Control, action: SpawnNewInstance }
+
+shell:
+ program: "C:\\Windows\\System32\\wsl.exe ~" 
