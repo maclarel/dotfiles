@@ -1,5 +1,5 @@
 # Update PATH
-export PATH="/$PATH:$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:$PATH"
+export PATH="$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin/:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/gillette/.oh-my-zsh"
