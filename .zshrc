@@ -2,7 +2,7 @@
 export PATH="$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin/:$PATH"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/gillette/.oh-my-zsh"
+export ZSH="$(eval echo "~$USER/.oh-my-zsh")"
 
 # Disable the damn bell
 unsetopt BEEP
@@ -18,8 +18,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Start limelight on MacOS only
 if [[ uname -eq "Darwin" ]]; then
-   if ! pgrep limelight; then
-      nohup limelight &
+   if ! pgrep limelight &> /dev/null; then
+      nohup limelight & 
    fi
 fi
 
