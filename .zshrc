@@ -16,6 +16,13 @@ plugins=(git zsh-syntax-highlighting)
 # Oh my ZSH goodies
 source $ZSH/oh-my-zsh.sh
 
+# Start limelight on MacOS only
+if [[ uname -eq "Darwin" ]]; then
+   if ! pgrep limelight; then
+      nohup limelight &
+   fi
+fi
+
 # User configuration
 
 # vi mode
