@@ -17,7 +17,7 @@ plugins=(git zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Start limelight on MacOS only
-if [[ uname == "Darwin" ]]; then
+if [[ $(uname) == "Darwin" ]]; then
    if ! pgrep limelight &> /dev/null; then
       nohup limelight & 
    fi
