@@ -14,11 +14,19 @@ let mapleader=" "
 nnoremap <leader>o :Lex<CR>
 nnoremap <leader><ENTER> :Goyo<CR>
 
+" Auto-install vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim'
 call plug#end()
+
 " Goyo config
 let g:goyo_linenr=1
 let g:goyo_width=100
