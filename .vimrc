@@ -9,7 +9,7 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 
-"Key binds
+" Key binds
 let mapleader=" "
 nnoremap <leader>o :Lex<CR>
 nnoremap <leader><ENTER> :Goyo<CR>
@@ -26,33 +26,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim'
 call plug#end()
-
-" Status line
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-set laststatus=2
-set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=\ 
-
 
 " Goyo config
 let g:goyo_linenr=1
