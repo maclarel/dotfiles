@@ -1,11 +1,16 @@
-syntax on
-colorscheme slate
+" Color scheme
+syntax enable
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
+" Navigation & display
 set number
 set relativenumber
 map <F6> :setlocal spell! spelllang=en_us<CR>
-" On pressing tab, insert 2 spaces
+  " On pressing tab, insert 2 spaces
 set expandtab
-" show existing tab with 2 spaces width
+  " show existing tab with 2 spaces width
 set tabstop=2
 set softtabstop=2
 
@@ -25,37 +30,18 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Status line
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-set statusline=
-set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=\ 
+let g:airline_theme='base16_solarized'
 
 " Goyo config
 let g:goyo_linenr=1
 let g:goyo_width=100
-" autocmd VimEnter * Goyo
 
+" autocmd VimEnter * Goyo
 function! s:goyo_enter()
   let b:quitting = 0
   let b:quitting_bang = 0
