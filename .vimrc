@@ -1,7 +1,9 @@
 " Color scheme
 syntax enable
 set background=dark
-let g:solarized_termcolors=256
+" Uncomment following line depending on terminal emulator if colors don't appear properly
+"let g:solarized_termcolors=256
+" Download @ https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 colorscheme solarized
 
 " Navigation & display
