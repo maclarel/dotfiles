@@ -8,7 +8,8 @@ export ZSH=$(eval echo "~$USER/.oh-my-zsh")
 unsetopt BEEP
 
 # Set theme
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Add plugins 
 plugins=(git zsh-syntax-highlighting)

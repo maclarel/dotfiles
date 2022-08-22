@@ -188,3 +188,7 @@ bar {
 default_border pixel 5
 gaps inner 10
 gaps outer 5
+
+# Volume control
+bindsym $mod+comma exec amixer set Master 5%+ 
+bindsym $mod+m exec amixer set Master 5%- 
