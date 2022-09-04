@@ -35,6 +35,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
+let g:ctrlp_show_hidden = 1
 
 " Status line
 let g:airline_theme='base16_solarized'
