@@ -9,8 +9,9 @@ colorscheme solarized
 " Navigation & display
 set number
 set relativenumber
+  " Fix spellcheck highlighting w/ Solarized
 set t_Cs=
-map <F6> :setlocal spell spelllang=en_us<CR>
+map <F6> :setlocal spell! spelllang=en_us<CR>
   " On pressing tab, insert 2 spaces
 set expandtab
   " show existing tab with 2 spaces width
@@ -21,6 +22,9 @@ set softtabstop=2
 let mapleader=" "
 nnoremap <leader>o :Lex<CR>
 nnoremap <leader><ENTER> :Goyo<CR>
+nnoremap <leader>a :ALEToggle<CR>
+nnoremap <leader>l :lopen<CR>
+nnoremap <leader>L :lclose<CR>
 
 " Auto-install vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -35,6 +39,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'dense-analysis/ale'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 let g:ctrlp_show_hidden = 1
 
@@ -67,3 +73,25 @@ endfunction
 autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
+" ALE
+let g:ale_linters = {'python': 'all', 'ruby': 'rubocop'}
+let g:ale_fixers = {'python': ['isort', 'yapf', 'remove_trailing_lines', 'trim_whitespace'], 'ruby': ['standardrb']}
+let g:ale_lsp_suggestions = 1
+let g:ale_fix_on_save = 1
+let g:ale_go_gofmt_options = '-s'
+let g:ale_go_gometalinter_options = '— enable=gosimple — enable=staticcheck'
+let g:ale_completion_enabled = 0
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s'
+
+" Jedi
+let g:jedi#use_splits_not_buffers = "right"
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>g"
+let g:jedi#goto_stubs_command = "<leader>s"
+let g:jedi#goto_definitions_command = ""
+let g:jedi#documentation_command = "K"
+let g:jedi#usages_command = "<leader>n"
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#rename_command = "<leader>r"
