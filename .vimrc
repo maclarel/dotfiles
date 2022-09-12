@@ -9,7 +9,8 @@ colorscheme solarized
 " Navigation & display
 set number
 set relativenumber
-map <F6> :setlocal spell! spelllang=en_us<CR>
+set t_Cs=
+map <F6> :setlocal spell spelllang=en_us<CR>
   " On pressing tab, insert 2 spaces
 set expandtab
   " show existing tab with 2 spaces width
