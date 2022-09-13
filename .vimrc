@@ -27,6 +27,7 @@ nnoremap <leader><ENTER> :Goyo<CR>
 nnoremap <leader>a :ALEToggle<CR>
 nnoremap <leader>l :lopen<CR>
 nnoremap <leader>L :lclose<CR>
+nnoremap <leader>M :MarkdownPreviewToggle<CR>
 
 " Auto-install vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -43,6 +44,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dense-analysis/ale'
 Plug 'davidhalter/jedi-vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 let g:ctrlp_show_hidden = 1
 
@@ -76,7 +78,7 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
 " ALE
-let g:ale_linters = {'python': 'all', 'ruby': 'rubocop'}
+let g:ale_linters = {'python': 'all', 'ruby': ['rubocop', 'standardrb'], 'bash': ['shellcheck']}
 let g:ale_fixers = {'python': ['isort', 'yapf', 'remove_trailing_lines', 'trim_whitespace'], 'ruby': ['standardrb']}
 let g:ale_lsp_suggestions = 1
 let g:ale_fix_on_save = 1
