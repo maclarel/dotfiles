@@ -17,6 +17,8 @@ set expandtab
   " show existing tab with 2 spaces width
 set tabstop=2
 set softtabstop=2
+  " Fix backspace wonkiness
+set backspace=indent,eol,start
 
 " Key binds
 let mapleader=" "
