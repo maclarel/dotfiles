@@ -5,10 +5,13 @@ window:
     y: 5
   decorations: "none" 
 
-background_opacity: 0.95
+window:
+  opacity: 1
 
 key_bindings:
     - { key: Equals, mods: Control, action: IncreaseFontSize }
     - { key: Minus, mods: Control, action: DecreaseFontSize }
     - { key: Key0, mods: Control, action: ResetFontSize }
-    - { key: N, mods: Control, action: SpawnNewInstance }
+
+import:
+    - ~/.alacritty-colorscheme/themes/solarized_dark.yaml

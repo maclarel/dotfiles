@@ -45,8 +45,8 @@ alias ll='ls -lAtr'									# `ll` ala Linux
 alias f='open -a Finder ./'								# Open Finder at current directory
 alias myip='curl http://ipecho.net/plain; echo'						# Get Public IP
 alias c='clear'										# Clear terminal
-alias v='vim'										# Saving keystrokes for vim
-alias sv='sudo vim'									# See above
+alias v='nvim'										# Saving keystrokes for vim
+alias sv='sudo nvim'									# See above
 alias reload='source ~/.zshrc'								# Reload dotfile
 alias ytd="youtube-dl -f bestvideo+bestaudio "                                          # youtube-dl best video/audio
 alias ga='git add'									# Save keystrokes for git
@@ -80,4 +80,3 @@ alias gd='git diff'
          fi
     }	
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
