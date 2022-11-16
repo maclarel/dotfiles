@@ -204,4 +204,5 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # i3lock
+exec_always --no-startup-id xautolock -time 10 -locker "/home/gillette/.scripts/scrlock.sh"
 bindsym $mod+Escape exec /home/gillette/.scripts/scrlock.sh 2>&1 >> /dev/null 
