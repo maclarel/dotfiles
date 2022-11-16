@@ -190,7 +190,18 @@ default_border pixel 5
 gaps inner 10
 gaps outer 5
 
+# Screenshot
+bindsym $mod+shift+s --release exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' 
+
 # Volume control
 bindsym $mod+comma exec pactl set-sink-volume @DEFAULT_SINK@ +5% 
 bindsym $mod+m exec pactl set-sink-volume @DEFAULT_SINK@ -5% 
 bindsym $mod+p exec pavucontrol
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# i3lock
+bindsym $mod+Escape exec /home/gillette/.scripts/scrlock.sh 2>&1 >> /dev/null 
