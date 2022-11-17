@@ -32,18 +32,16 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym $mod+p exec pavucontrol
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-#bindsym $mod+Return exec xterm
-#bindsym $mod+Return exec qterminal
 bindsym $mod+Return exec alacritty
 
 # kill focused window
@@ -188,15 +186,10 @@ bar {
 # Gaps
 default_border pixel 5
 gaps inner 10
-gaps outer 5
+gaps outer 10
 
 # Screenshot
 bindsym $mod+shift+s --release exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' 
-
-# Volume control
-bindsym $mod+comma exec pactl set-sink-volume @DEFAULT_SINK@ +5% 
-bindsym $mod+m exec pactl set-sink-volume @DEFAULT_SINK@ -5% 
-bindsym $mod+p exec pavucontrol
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -206,3 +199,6 @@ bindsym XF86AudioPrev exec playerctl previous
 # i3lock
 exec_always --no-startup-id xautolock -time 10 -locker "/home/gillette/.scripts/scrlock.sh"
 bindsym $mod+Escape exec /home/gillette/.scripts/scrlock.sh 2>&1 >> /dev/null 
+
+# Background
+exec_always --no-startup-id feh --bg-fill /home/gillette/Pictures/backiee-129376-landscape.jpg
