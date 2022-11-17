@@ -12,3 +12,17 @@ Dotfiles and plists for various apps I use/have used and want to maintain a sour
 - `alacritty.yml`: Config for [Alacritty](https://github.com/alacritty/alacritty), current terminal emulator
 - `com.amethyst.Amethyst.plist`: Prefs file (yuck!) for my current tiling window manager, [Ameythyst](https://github.com/ianyh/Amethyst/)
   - Needs to be placed in `~/Library/Preferences/`
+
+# Prereqs
+- Install zsh & set as default shell
+```
+sudo apt install zsh && sudo usermod --shell /usr/bin/zsh <username>
+```
+- Install oh-my-zsh 
+```
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+``
+- Install zsh-syntax-highlighting 
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
