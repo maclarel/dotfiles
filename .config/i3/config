@@ -180,7 +180,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         position top
-        status_command i3status
+        # Spotify integration via https://github.com/rpieja/i3spotifystatus
+        status_command i3status | ~/repos/i3spotifystatus/pystatus.py
 }
 
 # Gaps

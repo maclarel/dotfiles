@@ -9,6 +9,7 @@ order += "load"
 order += "memory"
 order += "disk /"
 order += "disk /home"
+order += "disk /data"
 order += "tztime local"
 order += "volume master"
 
@@ -38,6 +39,10 @@ disk "/" {
 
 disk "/home" {
         format = "/home %free"
+}
+
+disk "/data" {
+        format = "/data %free"
 }
 
 volume master {
