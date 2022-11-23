@@ -38,6 +38,7 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'github/copilot.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'

@@ -1,5 +1,17 @@
 # Update PATH
-export PATH="$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin/:$PATH"
+if [[ -z $TMUX ]]; then
+        export PATH="$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin/:$PATH"
+
+        if [[ "$(hostname)" == "laptocat"* ]]; then
+                export PATH=$PATH:/Users/maclarel/tools/
+                # RVM and NVM 
+                [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+                export NVM_DIR="$HOME/.nvm"
+                [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+                [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+        fi
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=$(eval echo "~$USER/.oh-my-zsh")
@@ -38,6 +50,7 @@ bindkey '^R' history-incremental-search-backward
 
 # Enable colors and change prompt:
 autoload -U colors && colors
+export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
 # Aliases
 alias flushdns='sudo killall -HUP mDNSResponder'					# Flush DNS Cache
@@ -56,6 +69,8 @@ alias push='git push'
 alias gs='git status'
 alias gc='git checkout'
 alias gd='git diff'
+alias updog='python3 -m http.server 9001' # Create webserver serving content from cwd
+
 
 # File Management
 
@@ -79,5 +94,3 @@ alias gd='git diff'
              echo "'$1' is not a valid file"
          fi
     }	
-
-export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
