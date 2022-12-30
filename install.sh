@@ -35,6 +35,16 @@ if [ -d ~/.vim ]; then
         cp -R .vim ~/.vim
 fi
 
+# Neovim
+if [ ! -f /usr/bin/nvim ]; then
+	sudo apt update && sudo apt install -y neovim
+fi
+
+if [ ! -f ~/.config/nvim/init.vim ]; then
+	mkdir -p ~/.config/nvim
+	ln -s ~/.vimrc ~/.config/nvim/init.vim
+fi
+
 # zsh plugins
 if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
