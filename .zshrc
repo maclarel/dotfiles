@@ -1,6 +1,6 @@
 # Update PATH
 if [[ -z $TMUX ]]; then
-        export PATH="$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin/:$PATH"
+        export PATH="$PATH:$HOME/.scripts:$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin/"
 
         # NVM
         export NVM_DIR="$HOME/.nvm"
@@ -72,6 +72,8 @@ alias gc='git checkout'
 alias gd='git diff'
 alias updog='python3 -m http.server 9001' # Create webserver serving content from cwd
 alias libby='/usr/bin/libby --no-view'
+alias r='ranger'
+alias suspend='sudo systemctl suspend'
 
 # File Management
 

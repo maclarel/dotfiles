@@ -181,7 +181,9 @@ bindsym $mod+r mode "resize"
 bar {
         colors {
                 # Match solarized dark terminal theme
-                background #002b36
+                # background #002b36
+                # As black as my soul
+                background #000000
         }
         position top
         tray_output DP-4
@@ -207,4 +209,4 @@ exec_always --no-startup-id xautolock -time 10 -locker "/home/gillette/.scripts/
 bindsym $mod+Escape exec /home/gillette/.scripts/scrlock.sh 2>&1 >> /dev/null 
 
 # Background
-exec_always --no-startup-id feh --bg-fill /home/gillette/Pictures/backiee-129376-landscape.jpg
+exec_always --no-startup-id feh --bg-fill /home/gillette/Pictures/current_desktop
