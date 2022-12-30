@@ -19,19 +19,23 @@ done
 # Config dirs
 if [ -d ~/.config ]; then
         echo "Backing up pre-existing ~/.config..."
-        cp ~/.config ~/.config.orig
+        cp -R ~/.config ~/.config.orig
 fi
 
 for f in $configdirs; do
-        echo "Copying .config to ~/"
-        cp -R "$f" ~/.config/"$f"
+        echo "Copying $f to ~/"
+        cp -R "$f" ~/"$f"
 done
 
 # Vim
 if [ -d ~/.vim ]; then
         echo "Backing up existing .vim dir"
-        mv ~/.vim ~/.vim.old
-        echo "Creating symlink for .vim"
+        cp -R ~/.vim ~/.vim.old
+        echo "Copying .vim for .vim"
         cp -R .vim ~/.vim
 fi
 
+# zsh plugins
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting ]; then
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+fi
