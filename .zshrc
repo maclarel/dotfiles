@@ -73,7 +73,7 @@ alias gd='git diff'
 alias updog='python3 -m http.server 9001' # Create webserver serving content from cwd
 alias libby='/usr/bin/libby --no-view'
 alias r='ranger'
-alias suspend='sudo systemctl suspend'
+alias suspend='~/.scripts/scrlock.sh suspend'
 
 # File Management
 
