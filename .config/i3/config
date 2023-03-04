@@ -181,11 +181,9 @@ bindsym $mod+r mode "resize"
 bar {
         colors {
                 # Match solarized dark terminal theme
-                # background #002b36
-                # As black as my soul
-                background #000000
+                background #002b36
         }
-        position top
+        position bottom
         tray_output DP-4
         # Spotify integration via https://github.com/rpieja/i3spotifystatus
         status_command i3status | ~/repos/i3spotifystatus/pystatus.py
@@ -197,7 +195,7 @@ gaps inner 5
 gaps outer 5
 
 # Screenshot
-bindsym $mod+shift+s --release exec scrot -s 'screenshot_%Y%m%d_%H%M%S.png' -e 'mkdir -p ~/Pictures/screenshots && mv $f ~/Pictures/screenshots && xclip -selection clipboard -t image/png -i ~/Pictures/screenshots/`ls -1 -t ~/Pictures/screenshots | head -1`' 
+bindsym $mod+shift+s --release exec scrot -s -e 'xclip -selection clipboard -t image/png -i $f'
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
