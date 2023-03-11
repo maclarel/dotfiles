@@ -74,6 +74,7 @@ alias updog='python3 -m http.server 9001' # Create webserver serving content fro
 alias libby='/usr/bin/libby --no-view'
 alias r='ranger'
 alias suspend='~/.scripts/scrlock.sh suspend'
+alias copy='rsync -Phua'
 
 # File Management
 
