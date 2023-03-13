@@ -32,6 +32,11 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Update prompt
+if [ "$HOST" = "evo" ]; then
+	export PS1="%F{red}!!! %n@EVO !!! $PS1"
+fi
+
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
