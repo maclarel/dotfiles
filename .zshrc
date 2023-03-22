@@ -17,6 +17,9 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH=$(eval echo "~$USER/.oh-my-zsh")
 
+# unset PAGER, set by ^
+unset PAGER
+
 # Disable the damn bell
 unsetopt BEEP
 
@@ -103,3 +106,5 @@ alias copy='rsync -Phua'
              echo "'$1' is not a valid file"
          fi
     }	
+
+eval "$(rbenv init -)"

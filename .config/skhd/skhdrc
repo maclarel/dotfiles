@@ -1,0 +1,44 @@
+# focus window
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
+# swap managed window
+shift + alt - h : yabai -m window --swap west
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - l : yabai -m window --swap east
+
+# move managed window
+# shift + cmd - h : yabai -m window --warp east
+
+# balance size of windows
+shift + alt - e : yabai -m space --balance
+
+# increase window size
+shift + alt - a : yabai -m window --resize left:-20:0
+shift + alt - w : yabai -m window --resize top:0:-20
+
+# decrease window size
+shift + cmd - s : yabai -m window --resize bottom:0:-20
+shift + cmd - w : yabai -m window --resize top:0:20
+
+# toggle window split type
+alt - e : yabai -m window --toggle split
+
+# float / unfloat window and center on screen
+shift + alt - space : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# throw window to space
+alt + shift - 1 : yabai -m window --space 1
+alt + shift - 2 : yabai -m window --space 2
+alt + shift - 3 : yabai -m window --space 3
+alt + shift - 4 : yabai -m window --space 4
+alt + shift - 5 : yabai -m window --space 5
+
+# close window
+alt + shift - q : yabai -m window --close
+
+# restart yabai
+alt + shift - r : brew services restart yabai 
