@@ -1,0 +1,9 @@
+configuration {
+  modes: [ combi ];
+  combi-modes: [ drun, run ];
+}
+
+@theme "solarized_alternate"
+ 
+/* Insert theme modifications after this */
+@theme "/usr/share/rofi/themes/solarized.rasi"
