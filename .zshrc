@@ -7,7 +7,7 @@ if [[ -z $TMUX ]]; then
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-        if [[ "$(cat /etc/hostname)" == "laptocat"* ]]; then
+        if [[ "$HOST" == "laptocat"* ]]; then
                 export PATH=$PATH:/Users/maclarel/tools/
                 # RVM
                 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
