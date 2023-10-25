@@ -6,7 +6,7 @@ window:
   decorations: "none" 
 
 window:
-  opacity: .9
+  opacity: .95
 
 key_bindings:
     - { key: Equals, mods: Control, action: IncreaseFontSize }
