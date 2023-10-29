@@ -167,3 +167,7 @@ exec_always --no-startup-id feh --bg-fill /home/gillette/Pictures/current_deskto
 
 # Compositor
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
+
+# Thunar
+bindsym $mod+t exec thunar
+for_window [instance="thunar" class="Thunar"] floating enable, resize set 50 ppt 50 ppt;
