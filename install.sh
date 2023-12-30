@@ -1,4 +1,5 @@
 #!/bin/bash
+exit 0 # Adding so this doesn't get called by Codespaces while in development
 set -e
 
 # List only files/config dirs that should be copied
