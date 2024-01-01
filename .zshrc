@@ -28,7 +28,7 @@ unsetopt BEEP
 ZSH_THEME="agnoster"
 
 # Add plugins 
-plugins=(git zsh-syntax-highlighting)
+plugins=(zsh-syntax-highlighting)
 
 # Oh my ZSH goodies
 source $ZSH/oh-my-zsh.sh
@@ -106,3 +106,5 @@ alias copy='rsync -Phua'
              echo "'$1' is not a valid file"
          fi
     }	
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

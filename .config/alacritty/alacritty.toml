@@ -1,0 +1,24 @@
+import = ["/home/gillette/.alacritty-colorscheme/themes/solarized_dark.toml"]
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[window]
+decorations = "none"
+opacity = 0.95
+
+[window.padding]
+x = 5
+y = 5
