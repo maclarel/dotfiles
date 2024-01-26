@@ -48,7 +48,7 @@ yabai -m config                                 \
     mouse_drop_action            swap
 
 yabai -m rule --add app="zoom.us" manage=off
-yabai -m rule --add app="Joplin" manage=off
+#yabai -m rule --add app="Joplin" manage=off
 yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off
 
 echo "yabai configuration loaded.."

@@ -35,6 +35,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Set EDITOR to nvim
+export EDITOR="nvim"
+
 # Update prompt
 if [ "$HOST" = "evo" ]; then
 	export PS1="%F{red}!!! %n@EVO !!! $PS1"
