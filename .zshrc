@@ -2,16 +2,17 @@
 if [[ -z $TMUX ]]; then
         export PATH="$PATH:$HOME/.scripts:$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin/"
 
+        # RVM
+        [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
         # NVM
         export NVM_DIR="$HOME/.nvm"
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
-        if [[ "$HOST" == "laptocat"* ]]; then
-                export PATH=$PATH:/Users/maclarel/tools/
-                # RVM
-                [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-        fi
+if [[ "$HOST" == "laptocat"* ]]; then
+        export PATH=$PATH:/Users/maclarel/tools/
 fi
 
 # Path to your oh-my-zsh installation.
@@ -24,7 +25,6 @@ unset PAGER
 unsetopt BEEP
 
 # Set theme
-#ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
 
 # Add plugins 
@@ -37,11 +37,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Set EDITOR to nvim
 export EDITOR="nvim"
-
-# Update prompt
-if [ "$HOST" = "evo" ]; then
-	export PS1="%F{red}!!! %n@EVO !!! $PS1"
-fi
 
 # vi mode
 bindkey -v
@@ -82,8 +77,6 @@ alias gs='git status'
 alias gc='git checkout'
 alias gd='git diff'
 alias updog='python3 -m http.server 9001' # Create webserver serving content from cwd
-alias libby='/usr/bin/libby --no-view'
-alias r='ranger'
 alias suspend='~/.scripts/scrlock.sh suspend'
 alias copy='rsync -Phua'
 
@@ -110,4 +103,3 @@ alias copy='rsync -Phua'
          fi
     }	
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
