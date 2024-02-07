@@ -19,6 +19,8 @@ set tabstop=2
 set softtabstop=2
   " Fix backspace wonkiness
 set backspace=indent,eol,start
+  " Mouse support?
+set mouse+=a
 
 " Key binds
 let mapleader=" "
