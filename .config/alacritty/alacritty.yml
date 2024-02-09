@@ -1,3 +1,4 @@
+# Despite this being deprecated, Kali still only provides 0.12.2 (yml only)
 # Place this file in .config/alacritty/
 window:
   padding:
