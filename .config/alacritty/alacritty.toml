@@ -22,3 +22,6 @@ opacity = 0.95
 [window.padding]
 x = 5
 y = 5
+
+[selection]
+save_to_clipboard = true
