@@ -1,10 +1,6 @@
 " Color scheme
 syntax enable
 set background=dark
-" Uncomment following line depending on terminal emulator if colors don't appear properly
-" let g:solarized_termcolors=256
-" Download @ https://raw.githubusercontent.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" colorscheme solarized
 
 " Navigation & display
 set number
@@ -19,7 +15,7 @@ set tabstop=2
 set softtabstop=2
   " Fix backspace wonkiness
 set backspace=indent,eol,start
-  " Mouse support?
+  " Mouse support
 set mouse+=a
 
 " Key binds
@@ -37,8 +33,11 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-"nnoremap <leader>l :lopen<CR>
-"nnoremap <leader>L :lclose<CR>
+  " Telescope
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Auto-install vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -50,9 +49,8 @@ endif
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'github/copilot.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' }
 Plug 'junegunn/goyo.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -63,11 +61,10 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-context'
 call plug#end()
-let g:ctrlp_show_hidden = 1
 lua require'nvim-tree'.setup {}
 
 " Status line
-let g:airline_theme='base16_solarized'
+let g:airline_theme='solarized'
 
 " Goyo 
 let g:goyo_linenr=1
@@ -117,10 +114,3 @@ let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
-
-" Telescope
-nnoremap <leader>fF <cmd>lua require('telescope.builtin').find_files({ hidden = true})<cr> " include hidden files
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
