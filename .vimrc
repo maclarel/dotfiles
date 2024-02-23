@@ -63,8 +63,11 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-context'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'folke/noice.nvim'
 call plug#end()
 lua require'nvim-tree'.setup {}
+lua require("noice").setup()
 
 " Status line
 let g:airline_theme='solarized'
