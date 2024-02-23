@@ -38,6 +38,9 @@ nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+  " Copilot
+imap <silent> <C-j> <Plug>(copilot-next)
+imap <silent> <C-k> <Plug>(copilot-previous)
 
 " Auto-install vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -66,7 +69,7 @@ lua require'nvim-tree'.setup {}
 " Status line
 let g:airline_theme='solarized'
 
-" Goyo 
+" Goyo
 let g:goyo_linenr=1
 let g:goyo_width=100
 
