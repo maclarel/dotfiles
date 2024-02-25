@@ -4,7 +4,7 @@ window:
   padding:
     x: 5 
     y: 5
-  decorations: "none" 
+  decorations: "full" 
   opacity: .95
 
 key_bindings:
