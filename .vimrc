@@ -1,7 +1,3 @@
-" Color scheme
-syntax enable
-set background=dark
-
 " Navigation & display
 set number
 set relativenumber
@@ -66,6 +62,7 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'rcarriga/nvim-notify'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'folke/noice.nvim'
+Plug 'overcache/NeoSolarized'
 call plug#end()
 lua require'nvim-tree'.setup {}
 lua require("noice").setup()
@@ -121,3 +118,9 @@ let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = "<leader>r"
+
+" Color scheme
+syntax enable
+set background=dark
+set termguicolors
+colorscheme NeoSolarized

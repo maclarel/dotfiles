@@ -79,6 +79,7 @@ alias gd='git diff'
 alias updog='python3 -m http.server 9001' # Create webserver serving content from cwd
 alias suspend='~/.scripts/scrlock.sh suspend'
 alias copy='rsync -Phua'
+alias phone="sudo aft-mtp-mount -o allow_other"
 
 # File Management
 
