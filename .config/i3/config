@@ -20,7 +20,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run
+#bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -show run -run-shell-command '{terminal} -e zsh -ic "{cmd}"'
 
 # change focus
 bindsym $mod+j focus left
@@ -163,8 +164,8 @@ bindsym $mod+Escape exec /home/gillette/.scripts/scrlock.sh lock 2>&1 >> /dev/nu
 
 # Background
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-#exec_always --no-startup-id feh --bg-fill /home/gillette/Pictures/current_desktop
-exec_always --no-startup-id feh --bg-fill /home/gillette/Pictures/Desktops/current_desktop /home/gillette/Pictures/Desktops/tall/zhg95u5mdgda1.png
+exec_always --no-startup-id feh --bg-fill /home/gillette/Pictures/current_desktop
+#exec_always --no-startup-id feh --bg-fill /home/gillette/Pictures/Desktops/current_desktop /home/gillette/Pictures/Desktops/tall/zhg95u5mdgda1.png
 
 # Compositor
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b

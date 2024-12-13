@@ -1,0 +1,32 @@
+[/]
+custom-list=['custom0']
+
+[custom-keybindings/custom0]
+binding=['<Shift><Super>s']
+command="scrot -s -e 'xclip -selection clipboard -t image/png -i $f && rm $f'"
+name='Screenshot'
+
+[media-keys]
+area-screenshot=@as []
+screensaver=['<Super>Escape', 'XF86ScreenSaver']
+screenshot=@as []
+terminal=['<Super>Return']
+
+[wm]
+close=['<Alt>F4', '<Shift><Super>q']
+maximize=['<Super>f']
+move-to-workspace-1=['<Shift><Super>exclam']
+move-to-workspace-2=['<Shift><Super>at']
+move-to-workspace-3=['<Shift><Super>numbersign']
+move-to-workspace-4=['<Shift><Super>dollar']
+move-to-workspace-5=['<Shift><Super>percent']
+panel-run-dialog=['<Alt>F2', '<Shift><Super>d']
+show-desktop=@as []
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+switch-to-workspace-5=['<Super>5']
+switch-to-workspace-6=['<Super>6']
+switch-windows=['<Super>Tab']
+unmaximize=['<Shift><Super>f']
