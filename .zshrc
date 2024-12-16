@@ -1,14 +1,14 @@
 # Update PATH
 if [[ -z $TMUX ]]; then
-        export PATH="$PATH:$HOME/.scripts:$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin/"
+        export PATH="$PATH:$HOME/.scripts:$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin/:$HOME/.local/bin"
 
         # RVM
-        [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+        #[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
         # NVM
-        export NVM_DIR="$HOME/.nvm"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+        #export NVM_DIR="$HOME/.nvm"
+        #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+        #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 if [[ "$HOST" == "laptocat"* ]]; then
