@@ -146,9 +146,9 @@ bindsym $mod+r mode "resize"
 
 # Gaps
 default_border pixel 2
-gaps inner 10
+gaps inner 5
 gaps outer 0
-gaps top 30
+gaps top 10
 
 # Screenshot
 bindsym $mod+shift+s --release exec scrot -s -e 'xclip -selection clipboard -t image/png -i $f && rm $f'
