@@ -36,7 +36,8 @@ yabai -m config                                 \
     split_ratio                  0.50           \
     split_type                   auto           \
     auto_balance                 on            \
-    top_padding                  50             \
+    external_bar                 main:40:0      \
+    top_padding                  10             \
     bottom_padding               10             \
     left_padding                 10             \
     right_padding                10             \
