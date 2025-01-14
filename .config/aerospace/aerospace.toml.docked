@@ -8,7 +8,7 @@ enable-normalization-flatten-containers = false
 enable-normalization-opposite-orientation-for-nested-containers = false
 
 # Mouse follows focus when focused monitor changes
-on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+#on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 # Start on launch
 start-at-login = true
@@ -99,5 +99,5 @@ outer.top =        [{ monitor.main = 50 }, 10]
 outer.right =      10
 
 [workspace-to-monitor-force-assignment]
-4 = 'built-in' 
-5 = 'built-in' 
+9 = 'built-in' 
+10 = 'built-in' 
