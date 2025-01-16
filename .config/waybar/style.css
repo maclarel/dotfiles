@@ -90,7 +90,7 @@
 }
 #waybar.bottom box.modules-center {
   background: #181825;
-  margin-top: 5pt;
+  margin-top: 0pt;
   padding: 0 4pt;
   border-top-left-radius: 10pt;
   border-top-right-radius: 10pt;
