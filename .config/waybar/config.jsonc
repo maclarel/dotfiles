@@ -8,13 +8,14 @@
     "margin-bottom": 0,
     "margin-left": 4,
     "margin-right": 4,
-    "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-center": ["clock"],
+    "modules-left": ["hyprland/workspaces", "mpris"],
+    "modules-center": ["hyprland/window"],
     "modules-right": [
       "cpu",
       "memory",
       "disk",
       "pulseaudio",
+			"clock",
       "tray"
     ],
     "hyprland/workspaces": {
@@ -25,6 +26,17 @@
       "sort-by-number": true,
       "active-only": false
     },
+		"mpris": {
+			"format": "{player_icon} {dynamic}",
+			"format-paused": "{status_icon} <i>{dynamic}</i>",
+			"player-icons": {
+				"default": "▶",
+				"mpv": "🎵"
+			},
+			"status-icons": {
+				"paused": "⏸"
+			}
+		},
     "hyprland/window": {
       "format": "{title}",
       "separate-outputs": true
@@ -51,7 +63,7 @@
     "memory": {
       "interval": 10,
       "format": "󰍛  {percentage}%",
-      "max-length": 10,
+      "max-length": 10
     },
     "disk": {
     "interval": 30,

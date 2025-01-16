@@ -55,6 +55,10 @@
   margin-right: 5px;
 }
 
+#clock {
+  margin-right: 5px;
+}
+
 #tray {
   margin-right: 10pt;
 }
@@ -78,7 +82,7 @@
 
 #pulseaudio {
   color: #74c7ec;
-  margin-right: 10pt;
+  margin-right: 5pt;
 }
 
 #waybar.bottom {
