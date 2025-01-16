@@ -39,7 +39,8 @@
 		},
     "hyprland/window": {
       "format": "{title}",
-      "separate-outputs": true
+      "separate-outputs": true,
+      "max-length": 100
     },
     "clock": {
       "format": "  {:%a %e %b %H:%M}",
