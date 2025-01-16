@@ -1,0 +1,75 @@
+// Written by Nicholas Oliver Bahary
+// on 14 September 2024
+[
+  {
+    "layer": "top",
+    "position": "top",
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "margin-left": 4,
+    "margin-right": 4,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": [
+      "memory",
+      "tray",
+      "pulseaudio"
+    ],
+    "hyprland/workspaces": {
+      "all-outputs": true,
+      "format": "{name}",
+      "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
+      "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+      "sort-by-number": true,
+      "active-only": false
+    },
+    "hyprland/window": {
+      "format": "{title}",
+      "separate-outputs": true
+    },
+    "clock": {
+      "format": "  {:%a %e %b %H:%M}",
+      "tooltip-format": "<tt>{calendar}</tt>",
+      "calendar": {
+        "mode": "month",
+        "format": {
+          "months": "<span color='#cdd6f4'><b>{}</b></span>",
+          "days": "<span color='#cdd6f4'><b>{}</b></span>",
+          "weeks": "<span color='#cdd6f4'><b>W{}</b></span>",
+          "weekdays": "<span color='#cdd6f4'><b>{}</b></span>",
+          "today": "<span color='#f38ba8'><b>{}</b></span>"
+        }
+      }
+    },
+    "memory": {
+      "interval": 30,
+      "format": "  {used}GiB",
+      "max-length": 13,
+      "tooltip": false
+    },
+    "tray": {
+      "icon-size": 15,
+      "spacing": 10
+    },
+    "pulseaudio": {
+      "format": "{icon} <b>{volume}%</b>",
+      "format-muted": " 󰝟 ",
+      "format-bluetooth": "{icon}  <b>{volume}%</b>",
+      "format-bluetooth-muted": "󰝟 ",
+      "format-icons": {
+        "headset": "",
+        "default": ["󰕿", "󰖀", "󰕾"]
+      },
+      "tooltip": true,
+      "on-click": "pavucontrol",
+      "ignored-sinks": ["JamesDSP Sink", "Easy Effects Sink", "HDA NVidia Digital Stereo (HDMI)"]
+    }
+  },
+  {
+    "layer": "top",
+    "position": "bottom",
+    "modules-center": [
+    ]
+  }
+]
+
