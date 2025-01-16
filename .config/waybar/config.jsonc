@@ -11,9 +11,11 @@
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": [
+      "cpu",
       "memory",
-      "tray",
-      "pulseaudio"
+      "disk",
+      "pulseaudio",
+      "tray"
     ],
     "hyprland/workspaces": {
       "all-outputs": true,
@@ -41,11 +43,20 @@
         }
       }
     },
+    "cpu": {
+    "interval": 10,
+    "format": "󰣇  {load}%",
+    "max-length": 10
+    },
     "memory": {
-      "interval": 30,
-      "format": "  {used}GiB",
-      "max-length": 13,
-      "tooltip": false
+      "interval": 10,
+      "format": "󰍛  {percentage}%",
+      "max-length": 10,
+    },
+    "disk": {
+    "interval": 30,
+    "format": "󰋊  {percentage_used}%",
+    "path": "/"
     },
     "tray": {
       "icon-size": 15,

@@ -40,9 +40,19 @@
   margin-right: 20pt;
 }
 
+#cpu {
+  color: #fab387;
+  margin-right: 5px;
+}
+
+#disk {
+  color: #fab387;
+  margin-right: 5px;
+}
+
 #memory {
   color: #fab387;
-  margin-right: 12pt;
+  margin-right: 5px;
 }
 
 #tray {
