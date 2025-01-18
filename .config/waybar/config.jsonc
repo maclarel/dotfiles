@@ -58,7 +58,7 @@
     },
     "cpu": {
     "interval": 10,
-    "format": "󰣇  {load}%",
+    "format": "󰣇  {load}",
     "max-length": 10
     },
     "memory": {
