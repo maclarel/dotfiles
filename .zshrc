@@ -1,19 +1,22 @@
 # Update PATH
-if [[ -z $TMUX ]]; then
-        export PATH="$PATH:$HOME/.scripts:$HOME/.rvm/bin:usr/local/opt/grep/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin/:$HOME/.local/bin"
-
-        # RVM
-        #[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-        # NVM
-        #export NVM_DIR="$HOME/.nvm"
-        #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-        #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-fi
-
 if [[ "$HOST" == "laptocat"* ]]; then
         export PATH=$PATH:/Users/maclarel/tools/
 fi
+
+# Temp workaround
+function kolide-stop() {
+	sudo systemctl stop launcher.kolide-k2.service && \
+	sudo killall osqueryd && \
+  echo "Stopped kolide and osquery"
+}
+
+function kolide-start() {
+	sudo systemctl start launcher.kolide-k2.service
+	echo "Hit enter when authed and done."
+	read
+	echo "Stopping kolide and osquery..."
+	kolide-stop
+}
 
 # Path to your oh-my-zsh installation.
 export ZSH=$(eval echo "~$USER/.oh-my-zsh")
@@ -28,7 +31,7 @@ unsetopt BEEP
 ZSH_THEME="agnoster"
 
 # Add plugins 
-plugins=(zsh-syntax-highlighting)
+#plugins=(zsh-syntax-highlighting)
 
 # Oh my ZSH goodies
 source $ZSH/oh-my-zsh.sh
@@ -80,6 +83,7 @@ alias updog='python3 -m http.server 9001' # Create webserver serving content fro
 alias suspend='~/.scripts/scrlock.sh suspend'
 alias copy='rsync -Phua'
 alias phone="sudo aft-mtp-mount -o allow_other"
+alias ks="kolide-start"
 
 # File Management
 
