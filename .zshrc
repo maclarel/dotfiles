@@ -84,6 +84,7 @@ alias suspend='~/.scripts/scrlock.sh suspend'
 alias copy='rsync -Phua'
 alias phone="sudo aft-mtp-mount -o allow_other"
 alias ks="kolide-start"
+alias bar='nohup waybar >>/var/log/waybar.log 2>&1 &'
 
 # File Management
 
