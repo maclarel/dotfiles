@@ -19,7 +19,7 @@ function kolide-start() {
 }
 
 # Path to your oh-my-zsh installation.
-export ZSH=$(eval echo "~$USER/.oh-my-zsh")
+export ZSH=$HOME/.oh-my-zsh
 
 # unset PAGER, set by ^
 unset PAGER
@@ -31,7 +31,7 @@ unsetopt BEEP
 ZSH_THEME="agnoster"
 
 # Add plugins 
-#plugins=(zsh-syntax-highlighting)
+plugins=(zsh-syntax-highlighting)
 
 # Oh my ZSH goodies
 source $ZSH/oh-my-zsh.sh
