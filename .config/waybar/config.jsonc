@@ -19,10 +19,11 @@
       "tray"
     ],
     "hyprland/workspaces": {
+      "disable-scroll": true,
       "all-outputs": true,
       "format": "{name}",
-      "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
-      "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+      //"on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
+      //"on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
       "sort-by-number": true,
       "active-only": false
     },
