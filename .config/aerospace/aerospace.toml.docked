@@ -44,7 +44,7 @@ alt-v = 'split vertical'
 
 alt-f = 'fullscreen'
 
-alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+ctrl-alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 
 alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
 
@@ -78,9 +78,33 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
 
+# Alternate bindings for 30 percent keeb
+
+alt-q = 'workspace 1'
+alt-w = 'workspace 2'
+alt-e = 'workspace 3'
+alt-r = 'workspace 4'
+alt-t = 'workspace 5'
+alt-y = 'workspace 6'
+alt-u = 'workspace 7'
+alt-i = 'workspace 8'
+alt-o = 'workspace 9'
+alt-p = 'workspace 10'
+
+alt-shift-q = 'move-node-to-workspace 1'
+alt-shift-w = 'move-node-to-workspace 2'
+alt-shift-e = 'move-node-to-workspace 3'
+alt-shift-r = 'move-node-to-workspace 4'
+alt-shift-t = 'move-node-to-workspace 5'
+alt-shift-y = 'move-node-to-workspace 6'
+alt-shift-u = 'move-node-to-workspace 7'
+alt-shift-i = 'move-node-to-workspace 8'
+alt-shift-o = 'move-node-to-workspace 9'
+alt-shift-p = 'move-node-to-workspace 10'
+
 alt-shift-c = 'reload-config'
 
-alt-r = 'mode resize'
+ctrl-alt-r = 'mode resize'
 
 [mode.resize.binding]
 h = 'resize width -50'
