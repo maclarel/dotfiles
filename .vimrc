@@ -20,9 +20,9 @@ nnoremap <leader>t :set splitbelow \| :sp term://zsh<CR>
 nnoremap <leader>gn :tabnew<CR>
 nnoremap <leader>gl :tabnext<CR>
 nnoremap <leader>gh :tabprev<CR>
-nnoremap <leader>gc :tabclose<CR>
-nnoremap <leader>o :NvimTreeFindFileToggle<CR>
-nnoremap <leader>O :NvimTreeToggle<CR>
+nnoremap <leader>gx :tabclose<CR>
+nnoremap <leader>o :call NvimTreeToggleAll()<CR>
+nnoremap <leader>O :NvimTreeFindFileToggle<CR>
 nnoremap <leader><ENTER> :Goyo<CR>
 nnoremap <leader>a :ALEToggle<CR>
 nnoremap <leader>M :MarkdownPreviewToggle<CR>
@@ -75,6 +75,27 @@ lua require("noice").setup()
 
 " Status line
 let g:airline_theme='solarized'
+
+" NvimTree toggle on all tabs
+function! NvimTreeToggleAll()
+  let current_tab = tabpagenr()
+  if g:nvim_tree_open
+    tabdo NvimTreeClose
+    let g:nvim_tree_open = 0
+  else
+    tabdo NvimTreeOpen
+    let g:nvim_tree_open = 1
+  endif
+  execute 'tabnext' current_tab
+endfunction
+let g:nvim_tree_open = 0
+
+" Auto-open NvimTree on ctrl-t
+lua <<EOF
+require("nvim-tree").setup({
+  open_on_tab = true,
+})
+EOF
 
 " Goyo
 let g:goyo_linenr=1
