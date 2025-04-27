@@ -151,3 +151,9 @@ syntax enable
 set background=dark
 set termguicolors
 colorscheme NeoSolarized
+
+" Have nvim show external changes to file while open
+set autoread
+augroup auto_read
+  autocmd!
+  autocmd FocusGained,BufEnter * checktime
