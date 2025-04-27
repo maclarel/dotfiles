@@ -13,6 +13,8 @@ set softtabstop=2
 set backspace=indent,eol,start
   " Mouse support
 set mouse+=a
+" Open splits to the right
+set splitright
 
 " Key binds
 let mapleader=" "
@@ -41,12 +43,14 @@ nnoremap <leader>FF <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-  " Copilot
+  " Copilot & CopilotChat
 imap <silent> <C-j> <Plug>(copilot-next)
 imap <silent> <C-k> <Plug>(copilot-previous)
+nnoremap <leader>cc :CopilotChatToggle<CR>
+nnoremap <leader>cm :CopilotChatModels<CR>
+nnoremap <leader>cr :CopilotChatReset<CR>
   " Nuake
 nnoremap <leader>t :Nuake<CR>
-inoremap <leader>t <C-\><C-n>:Nuake<CR> 
 tnoremap <leader>t <C-\><C-n>:Nuake<CR> 
   " ALE
 nnoremap <leader>a :ALEToggle<CR>
@@ -65,6 +69,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Lenovsky/nuake'
 Plug 'gelguy/wilder.nvim'
 Plug 'github/copilot.vim'
+Plug 'CopilotC-Nvim/CopilotChat.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'junegunn/goyo.vim'
@@ -109,6 +114,8 @@ lua <<EOF
 require("nvim-tree").setup({
   open_on_tab = true,
 })
+require("CopilotChat").setup {
+}
 EOF
 
 " Goyo
@@ -138,8 +145,8 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
 " ALE
-let g:ale_linters = {'python': 'all', 'ruby': ['rubocop', 'standardrb'], 'bash': ['shellcheck']}
-let g:ale_fixers = {'python': ['isort', 'yapf', 'remove_trailing_lines', 'trim_whitespace'], 'ruby': ['standardrb']}
+let g:ale_linters = {'python': 'all', 'ruby': ['rubocop', 'standardrb'], 'bash': ['shellcheck'], 'ansible': ['ansible-lint'], 'yaml': ['yamllint'], 'json': ['jsonlint'], 'html': ['htmlhint'], 'css': ['stylelint'], 'javascript': ['eslint'], 'typescript': ['eslint'], 'go': ['gofmt', 'gometalinter'], 'rust': ['rustc', 'cargo', 'clippy'], 'lua': ['luacheck'], 'markdown': ['markdownlint']}
+let g:ale_fixers = {'python': ['isort', 'yapf', 'remove_trailing_lines', 'trim_whitespace'], 'ruby': ['standardrb'], 'bash': ['shfmt', 'shellcheck'], 'ansible': ['ansible-lint'], 'yaml': ['prettier'], 'json': ['prettier'], 'html': ['prettier'], 'css': ['prettier'], 'javascript': ['eslint', 'prettier'], 'typescript': ['eslint', 'prettier'], 'go': ['gofmt', 'goreturns', 'goimports'], 'rust': ['rustfmt'], 'lua': ['stylua'], 'markdown': ['markdownlint']}
 let g:ale_lsp_suggestions = 1
 let g:ale_fix_on_save = 1
 let g:ale_go_gofmt_options = '-s'
