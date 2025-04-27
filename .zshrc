@@ -85,6 +85,7 @@ alias copy='rsync -Phua'
 alias phone="sudo aft-mtp-mount -o allow_other"
 alias ks="kolide-start"
 alias bar='nohup waybar >>/var/log/waybar.log 2>&1 &'
+alias wp='hyprctl hyprpaper reload ,"~/Pictures/current_desktop"'
 
 # File Management
 

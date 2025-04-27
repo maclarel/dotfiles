@@ -36,7 +36,8 @@ tnoremap <leader>j <C-\><C-N><C-w>j
 tnoremap <leader>k <C-\><C-N><C-w>k 
 tnoremap <leader>l <C-\><C-N><C-w>l 
   " Telescope
-nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
+nnoremap <leader>ff <cmd>Telescope find_files hidden=false<cr>
+nnoremap <leader>FF <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
