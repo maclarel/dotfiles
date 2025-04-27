@@ -16,16 +16,11 @@ set mouse+=a
 
 " Key binds
 let mapleader=" "
-nnoremap <leader>t :set splitbelow \| :sp term://zsh<CR>
+  " Navigation
 nnoremap <leader>gn :tabnew<CR>
 nnoremap <leader>gl :tabnext<CR>
 nnoremap <leader>gh :tabprev<CR>
 nnoremap <leader>gx :tabclose<CR>
-nnoremap <leader>o :call NvimTreeToggleAll()<CR>
-nnoremap <leader>O :NvimTreeFindFileToggle<CR>
-nnoremap <leader><ENTER> :Goyo<CR>
-nnoremap <leader>a :ALEToggle<CR>
-nnoremap <leader>M :MarkdownPreviewToggle<CR>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
@@ -35,6 +30,11 @@ tnoremap <leader>h <C-\><C-N><C-w>h
 tnoremap <leader>j <C-\><C-N><C-w>j
 tnoremap <leader>k <C-\><C-N><C-w>k 
 tnoremap <leader>l <C-\><C-N><C-w>l 
+  " NvimTree
+nnoremap <leader>o :call NvimTreeToggleAll()<CR>
+nnoremap <leader>O :NvimTreeFindFileToggle<CR>
+  " Goyo
+nnoremap <leader><ENTER> :Goyo<CR>
   " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files hidden=false<cr>
 nnoremap <leader>FF <cmd>Telescope find_files hidden=true<cr>
@@ -44,6 +44,14 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
   " Copilot
 imap <silent> <C-j> <Plug>(copilot-next)
 imap <silent> <C-k> <Plug>(copilot-previous)
+  " Nuake
+nnoremap <leader>t :Nuake<CR>
+inoremap <leader>t <C-\><C-n>:Nuake<CR> 
+tnoremap <leader>t <C-\><C-n>:Nuake<CR> 
+  " ALE
+nnoremap <leader>a :ALEToggle<CR>
+  " Markdown Preview
+nnoremap <leader>M :MarkdownPreviewToggle<CR>
 
 " Auto-install vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -54,6 +62,8 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'Lenovsky/nuake'
+Plug 'gelguy/wilder.nvim'
 Plug 'github/copilot.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
@@ -76,6 +86,9 @@ lua require("noice").setup()
 
 " Status line
 let g:airline_theme='solarized'
+
+" Nuake
+let g:nuake_size = 0.4
 
 " NvimTree toggle on all tabs
 function! NvimTreeToggleAll()
@@ -153,7 +166,7 @@ set background=dark
 set termguicolors
 colorscheme NeoSolarized
 
-" Have nvim show external changes to file while open
+" Detect external changes to file while open
 set autoread
 augroup auto_read
   autocmd!
