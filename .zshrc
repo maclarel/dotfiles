@@ -86,6 +86,7 @@ alias phone="sudo aft-mtp-mount -o allow_other"
 alias ks="kolide-start"
 alias bar='nohup waybar >>/var/log/waybar.log 2>&1 &'
 alias wp='hyprctl hyprpaper reload ,"~/Pictures/current_desktop"'
+alias clip='xclip -selection clipboard'
 
 # File Management
 
@@ -111,6 +112,15 @@ alias wp='hyprctl hyprpaper reload ,"~/Pictures/current_desktop"'
     }	
 
 # nvm
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# only enable if needed - SLOW
+#export NVM_DIR="$HOME/.config/nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# ssh-agent
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+        eval "$(ssh-agent -s)" > /dev/null 2>&1
+        ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+ssh-add -l > /dev/null || ssh-add
