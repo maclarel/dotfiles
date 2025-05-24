@@ -196,6 +196,9 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 bindsym $mod+t exec thunar
 for_window [instance="thunar" class="Thunar"] floating enable, resize set 50 ppt 50 ppt;
 
+# Zoom
+for_window [title="^zoom$" class="[zoom]*"] floating enable
+
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
