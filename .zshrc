@@ -113,9 +113,9 @@ alias clip='xclip -selection clipboard'
 
 # nvm
 # only enable if needed - SLOW
-#export NVM_DIR="$HOME/.config/nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # ssh-agent
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then
