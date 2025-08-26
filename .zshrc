@@ -71,7 +71,7 @@ alias c='clear'										# Clear terminal
 alias v='nvim'										# Saving keystrokes for vim
 alias sv='sudo nvim'									# See above
 alias reload='source ~/.zshrc'								# Reload dotfile
-alias ytd="youtube-dl -f bestvideo+bestaudio "                                          # youtube-dl best video/audio
+alias ytd="yt-dlp -f bestvideo+bestaudio "                                          # youtube-dl best video/audio
 alias ga='git add'									# Save keystrokes for git
 alias gac='git add -A && git commit -m'
 alias pull='git pull'
@@ -118,9 +118,9 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # ssh-agent
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-        eval "$(ssh-agent -s)" > /dev/null 2>&1
-        ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l > /dev/null || ssh-add
+#if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+#        eval "$(ssh-agent -s)" > /dev/null 2>&1
+#        ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+#fi
+#export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+#ssh-add -l > /dev/null || ssh-add
