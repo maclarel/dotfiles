@@ -27,6 +27,11 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+  " Terminal split navigation
+tnoremap <leader>h <C-\><C-N><C-w>h
+tnoremap <leader>j <C-\><C-N><C-w>j
+tnoremap <leader>k <C-\><C-N><C-w>k 
+tnoremap <leader>l <C-\><C-N><C-w>l 
   " NvimTree
 nnoremap <leader>o :call NvimTreeToggleAll()<CR>
 nnoremap <leader>O :NvimTreeFindFileToggle<CR>
