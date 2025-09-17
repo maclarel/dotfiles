@@ -1,0 +1,27 @@
+import = ["/Users/maclarel/.config/alacritty/themes/solarized_dark.toml"]
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[window]
+decorations = "buttonless"
+opacity = 0.95
+
+[window.padding]
+x = 5
+y = 5
+
+[selection]
+save_to_clipboard = true
