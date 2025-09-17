@@ -1,4 +1,4 @@
-import = ["/Users/maclarel/.config/alacritty/themes/solarized_dark.toml"]
+general.import = ["/Users/maclarel/.config/alacritty/themes/solarized_dark.toml"]
 
 [[keyboard.bindings]]
 action = "IncreaseFontSize"
