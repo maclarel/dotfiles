@@ -1,3 +1,6 @@
+# tmux autostart
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session; }
+
 # Update PATH
 if [[ "$HOST" == "laptocat"* ]]; then
         export PATH=$PATH:/Users/maclarel/tools/
