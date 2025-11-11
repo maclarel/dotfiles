@@ -25,7 +25,7 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     ]
 
 [mode.main.binding]
-alt-enter = 'exec-and-forget open -n /Applications/iTerm.app'
+alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
 
 # i3 wraps focus by default
 alt-j =         'focus --boundaries-action wrap-around-the-workspace left'
@@ -103,6 +103,10 @@ alt-shift-u = 'move-node-to-workspace 7'
 alt-shift-i = 'move-node-to-workspace 8'
 alt-shift-o = 'move-node-to-workspace 9'
 alt-shift-p = 'move-node-to-workspace 10'
+
+# Move workspace to next/previous monitor
+ctrl-alt-l = 'move-workspace-to-monitor next'
+ctrl-alt-h = 'move-workspace-to-monitor prev'
 
 alt-shift-c = 'reload-config'
 
