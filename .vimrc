@@ -84,13 +84,15 @@ Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'rcarriga/nvim-notify'
 Plug 'MunifTanjim/nui.nvim'
 Plug 'folke/noice.nvim'
-Plug 'overcache/NeoSolarized'
+Plug 'shaunsingh/nord.nvim'
+" Plug 'overcache/NeoSolarized'
 call plug#end()
 lua require'nvim-tree'.setup {}
 lua require("noice").setup()
 
 " Status line
-let g:airline_theme='solarized'
+"let g:airline_theme='solarized'
+let g:airline_theme='nord_minimal'
 
 " Nuake
 let g:nuake_size = 0.4
@@ -171,7 +173,8 @@ let g:jedi#rename_command = "<leader>r"
 syntax enable
 set background=dark
 set termguicolors
-colorscheme NeoSolarized
+colorscheme nord
+"colorscheme NeoSolarized
 
 " Detect external changes to file while open
 set autoread

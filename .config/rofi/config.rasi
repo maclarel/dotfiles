@@ -3,7 +3,30 @@ configuration {
   combi-modes: [ drun, run ];
 }
 
-@theme "solarized_alternate"
+/* @theme "solarized_alternate" */
  
 /* Insert theme modifications after this */
-@theme "/usr/share/rofi/themes/solarized.rasi"
+/* @theme "/usr/share/rofi/themes/solarized.rasi" */
+
+configuration {
+    font: "Envy Code R 10";
+    line-margin: 10;
+
+    display-ssh:    "";
+    display-run:    "";
+    display-drun:   "";
+    display-window: "";
+    display-combi:  "";
+}
+
+
+@theme "~/.config/rofi/nord.rasi"
+
+listview {
+	lines: 6;
+	columns: 2;
+}
+
+window {
+	width: 30%;
+}
