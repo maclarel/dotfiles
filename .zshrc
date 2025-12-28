@@ -70,7 +70,6 @@ alias gd='git diff'
 alias updog='python3 -m http.server 9001' # Create webserver serving content from cwd
 alias suspend='/usr/bin/systemctl suspend'
 alias copy='rsync -Phua'
-alias phone="sudo aft-mtp-mount -o allow_other"
 alias bar='nohup waybar >>/var/log/waybar.log 2>&1 &'
 alias wp='hyprctl hyprpaper reload ,"~/Pictures/current_desktop"'
 alias clip='xclip -selection clipboard'
@@ -105,9 +104,20 @@ alias clip='xclip -selection clipboard'
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # ssh-agent
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-        eval "$(ssh-agent -s)" > /dev/null 2>&1
-        ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+SSH_AUTH_LINK="$HOME/.ssh/ssh_auth_sock"
+
+# if the link exists but is unusable, remove it safely
+if [ -L "$SSH_AUTH_LINK" ] || [ -S "$SSH_AUTH_LINK" ]; then
+    SSH_AUTH_SOCK="$SSH_AUTH_LINK" ssh-add -l >/dev/null 2>&1 || rm -f "$SSH_AUTH_LINK"
 fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l > /dev/null || ssh-add
+
+# start agent if no valid socket exists
+if [ ! -S "$SSH_AUTH_LINK" ]; then
+    eval "$(ssh-agent -s)" >/dev/null
+    ln -sf "$SSH_AUTH_SOCK" "$SSH_AUTH_LINK"
+fi
+
+export SSH_AUTH_SOCK="$SSH_AUTH_LINK"
+
+# load keys if agent is reachable but empty
+ssh-add -l >/dev/null 2>&1 || ssh-add
