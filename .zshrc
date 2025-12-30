@@ -51,28 +51,29 @@ autoload -U colors && colors
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
 # Aliases
-alias flushdns='sudo killall -HUP mDNSResponder'					# Flush DNS Cache
-alias ll='ls -lAtr'									# `ll` ala Linux
-alias f='open -a Finder ./'								# Open Finder at current directory
-alias myip='curl http://ipecho.net/plain; echo'						# Get Public IP
-alias c='clear'										# Clear terminal
-alias v='nvim'										# Saving keystrokes for vim
-alias sv='sudo nvim'									# See above
-alias reload='source ~/.zshrc'								# Reload dotfile
-alias ytd="yt-dlp -f bestvideo+bestaudio "                                          # youtube-dl best video/audio
-alias ga='git add'									# Save keystrokes for git
-alias gac='git add -A && git commit -m'
-alias pull='git pull'
-alias push='git push'
-alias gs='git status'
-alias gc='git checkout'
-alias gd='git diff'
-alias updog='python3 -m http.server 9001' # Create webserver serving content from cwd
-alias suspend='/usr/bin/systemctl suspend'
-alias copy='rsync -Phua'
-alias bar='nohup waybar >>/var/log/waybar.log 2>&1 &'
-alias wp='hyprctl hyprpaper reload ,"~/Pictures/current_desktop"'
-alias clip='xclip -selection clipboard'
+alias flushdns='sudo killall -HUP mDNSResponder'           # Flush DNS Cache
+alias ll='ls -lAtr'                                        # `ll`
+alias f='open -a Finder ./'                                # Open Finder at current directory
+alias t='thunar .'                                         # Open Thunar at current directory
+alias myip='curl http://ipecho.net/plain; echo'            # Get Public IP
+alias c='clear'                                            # Clear terminal
+alias v='nvim'                                             # Saving keystrokes for vim
+alias sv='sudo nvim'                                       # ""
+alias reload='source ~/.zshrc'                             # Reload dotfile
+alias ytd="yt-dlp -f bestvideo+bestaudio "                 # youtube-dl best video/audio
+alias ga='git add'                                         # Save keystrokes for git
+alias gac='git add -A && git commit -m'                    # "" 
+alias pull='git pull'                                      # "" 
+alias push='git push'                                      # "" 
+alias gs='git status'                                      # "" 
+alias gc='git checkout'                                    # "" 
+alias gd='git diff'                                        # "" 
+alias updog='python3 -m http.server 9001'                  # Create webserver serving content from cwd
+alias suspend='/usr/bin/systemctl suspend'                 # Suspend system
+alias copy='rsync -Phua'                                   # Copy files with rsync
+alias bar='nohup waybar >>/var/log/waybar.log 2>&1 &'      # Start waybar with logging
+alias wp='hyprctl hyprpaper reload ,"~/Pictures/current_desktop"' # Reload wallpaper
+alias clip='xclip -selection clipboard'                    # Copy to clipboard
 
 # File Management
 
