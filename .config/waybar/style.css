@@ -3,16 +3,16 @@
 }
 #waybar.top > box.horizontal {
   background: #11111b;
-  box-shadow: 0 0 4pt #11111b;
-  border-radius: 12pt;
-  margin-top: 5pt;
-  margin-left: 5pt;
-  margin-right: 5pt;
-  padding: 2pt;
+  box-shadow: 0 0 0pt #11111b;
+  border-radius: 0pt;
+  margin-top: 0pt;
+  margin-left: 0pt;
+  margin-right: 0pt;
+  padding: 0pt;
 }
 
 #workspaces {
-  margin-left: 12pt;
+  margin-left: 4pt;
 }
 #workspaces button {
   color: #585b70;
