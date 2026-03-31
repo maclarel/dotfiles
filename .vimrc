@@ -15,6 +15,8 @@ set backspace=indent,eol,start
 set mouse+=a
 " Open splits to the right
 set splitright
+" no modeline
+set nomodeline
 
 " Key binds
 let mapleader=" "
