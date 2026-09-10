@@ -15,7 +15,7 @@ set backspace=indent,eol,start
 set mouse+=a
 " Open splits to the right
 set splitright
-" no modeline
+
 set nomodeline
 
 " Key binds
@@ -70,8 +70,8 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'Lenovsky/nuake'
 Plug 'gelguy/wilder.nvim'
-Plug 'github/copilot.vim'
-Plug 'CopilotC-Nvim/CopilotChat.nvim'
+"Plug 'github/copilot.vim'
+"Plug 'CopilotC-Nvim/CopilotChat.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': '0.1.x' }
 Plug 'junegunn/goyo.vim'
@@ -118,9 +118,11 @@ lua <<EOF
 require("nvim-tree").setup({
   open_on_tab = true,
 })
-require("CopilotChat").setup {
-}
 EOF
+
+" Readd if cool
+" require("CopilotChat").setup {
+" }
 
 " Goyo
 let g:goyo_linenr=1
