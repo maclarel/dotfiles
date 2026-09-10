@@ -3,7 +3,7 @@
 
 # Update PATH
 if [[ "$HOST" == "laptocat"* ]] || [[ "$HOST" == "laptress" ]]; then
-        export PATH=$PATH:$HOME/tools/
+        export PATH=$PATH:$HOME/tools/:$HOME/.local/bin
 fi
 
 # Path to your oh-my-zsh installation.
@@ -122,3 +122,11 @@ export SSH_AUTH_SOCK="$SSH_AUTH_LINK"
 
 # load keys if agent is reachable but empty
 ssh-add -l >/dev/null 2>&1 || ssh-add
+
+# Hunt-CLI
+autoload -Uz compinit
+compinit
+source /Users/logan.maclaren/.hunt-cli/autocomplete_zsh
+
+# opencode
+export PATH=/Users/logan.maclaren/.opencode/bin:$PATH
