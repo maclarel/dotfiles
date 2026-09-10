@@ -15,7 +15,7 @@ set backspace=indent,eol,start
 set mouse+=a
 " Open splits to the right
 set splitright
-
+" disable modeline
 set nomodeline
 
 " Key binds

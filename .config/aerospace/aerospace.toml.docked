@@ -125,6 +125,6 @@ outer.bottom =     10
 outer.top =        [{ monitor.main = 50 }, 10]
 outer.right =      10
 
-[workspace-to-monitor-force-assignment]
-9 = 'built-in' 
-10 = 'built-in' 
+#[workspace-to-monitor-force-assignment]
+#9 = 'built-in' 
+#10 = 'built-in' 
